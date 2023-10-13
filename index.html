@@ -39,7 +39,6 @@
     <script>
         var sort = false;
         d3.csv("/data/population_by_country_2020.csv", (d)=>barChart(d,sort));
-        // d3.csv("../data/population_by_country_2020.csv", (d) => pieChart(d));
         document.getElementById("title").innerText="Bar graph to show population of top 10 populated countaries."
         document.getElementById("info").innerText="Click on Sort Bar button Graph to sort data in Ascending and Descending order."
         
@@ -48,7 +47,7 @@
             document.getElementById("svgEl").remove()
             document.getElementById("title").innerText="Bar graph to show population of top 10 populated countaries."
             document.getElementById("info").innerText="Click on Sort Bar button Graph to sort data in Ascending and Descending order."
-            d3.csv("../data/population_by_country_2020.csv", (d) => barChart(d, sort));
+            d3.csv("/data/population_by_country_2020.csv", (d) => barChart(d, sort));
         }
 
         function showPie() {
@@ -56,7 +55,7 @@
             document.getElementById("svgEl").remove()
             document.getElementById("title").innerText="World population Share in percentage of top 10 populated countaries."
             document.getElementById("info").innerText="Hover over each Arc to see the appropriate percentage and on legend to highlight respective arc.(Please refresh if proper colors are not displayed)"
-            d3.csv("../data/population_by_country_2020.csv", (d) => pieChart(d));
+            d3.csv("/data/population_by_country_2020.csv", (d) => pieChart(d));
         }
 
         function barChart(incomingData, sort) {
